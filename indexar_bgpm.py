@@ -5,7 +5,7 @@ from pypdf import PdfReader
 from tqdm import tqdm
 from whoosh.index import create_in
 from whoosh.fields import Schema, TEXT, ID, NUMERIC
-from whoosh.analysis import StemmingAnalyzer
+from whoosh.analysis import StandardAnalyzer
 
 INDEX_DIR = "indice_boletins"
 
@@ -15,7 +15,11 @@ schema = Schema(
     numero=NUMERIC(stored=True),
     ano=NUMERIC(stored=True),
     pagina=NUMERIC(stored=True),
-    conteudo=TEXT(stored=True, analyzer=StemmingAnalyzer())
+    conteudo=TEXT(
+    stored=True,
+    analyzer=StandardAnalyzer(),
+    phrase=True
+)
 )
 
 
