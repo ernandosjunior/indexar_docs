@@ -1,3 +1,4 @@
 pypdf
 tqdm
 whoosh
+pandas

@@ -7,7 +7,7 @@ from whoosh.index import create_in
 from whoosh.fields import Schema, TEXT, ID, NUMERIC
 from whoosh.analysis import StandardAnalyzer
 
-INDEX_DIR = "indice_boletins"
+INDEX_DIR = "indices//indice_boletins_reservados"
 
 schema = Schema(
     arquivo=ID(stored=True),
@@ -112,6 +112,6 @@ def indexar(pasta_raiz, pastas_excluir=None):
 
 if __name__ == "__main__":
 
-    pasta_raiz = r"\\pm.es.gov.br.local\fs\DTIC\PUBLICO (TEMPORARIO)\BOLETIM"
+    pasta_raiz = r"\\pm.es.gov.br.local\fs\DTIC\PUBLICO (TEMPORARIO)\LUDMILLA\banco de dados"
 
     indexar(pasta_raiz)
